@@ -1,0 +1,27 @@
+{
+    "endpoints":[
+        {
+            "path":"/v1/event",
+            "method":"get",
+            "status":200,
+            "response": [
+                {
+                    "id":"1",
+                    "name":"test 1"
+                },
+                {
+                    "id":"2",
+                    "name":"test 2"
+                },
+                {
+                    "id":"3",
+                    "name":"test 3"
+                },
+                {
+                    "id":"4",
+                    "name":"test 4"
+                }
+            ]
+        }
+    ]
+}

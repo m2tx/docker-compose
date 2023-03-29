@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  mockapi:
+    image: m2tx/gomockapi:v1.0.1
+    restart: always
+    environment:
+      LOGGER_LEVEL: INFO
+      PORT: 8080
+    volumes:
+        - "./config.json:/config.json"
+    ports:
+      - 8080:8080
