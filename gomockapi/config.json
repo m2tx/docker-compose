@@ -2,6 +2,9 @@
     "endpoints": [
         {
             "path": "/v1/event",
+            "query":{
+                "param":["true"]
+            },
             "method": "get",
             "status": 200,
             "response": [
