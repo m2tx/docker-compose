@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ./data:/root/.ollama
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_HOST=0.0.0.0
+
+  ollama-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: ollama-webui
+    depends_on:
+      - ollama
+    ports:
+      - 8080:8080
+    environment:
+      - OLLAMA_BASE_URLS=http://ollama:11434 
+      - ENV=dev
+      - WEBUI_AUTH=False
+      - WEBUI_NAME=M2tx AI
+      - WEBUI_URL=http://localhost:8080
+      - WEBUI_SECRET_KEY=password
+  

@@ -6,3 +6,6 @@ restart-%:
 
 down-%:
 	docker compose --file ./$*/docker-compose.yml --project-name $* down
+
+log-%:
+	docker compose --file ./$*/docker-compose.yml --project-name $* logs

@@ -1,0 +1,12 @@
+version: '3.1' 
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    ports:
+      - '9000:9000'
+    volumes:
+      - "portainer_data:/data"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+volumes:
+  portainer_data:
+    driver: local
